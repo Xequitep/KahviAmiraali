@@ -11,7 +11,7 @@ body {
   font-size: 1em;
   line-height: 1.65;
   color: #373F49;
-  background: #eee;
+  background: #fff;
   margin: 0;
 }
 
@@ -28,7 +28,8 @@ h3 {
 }
 
 a {
-  color: currentColor;
+  color: 	#71685e;
+  text-decoration: none;
 }
 
 .wrapper {
@@ -45,8 +46,8 @@ a {
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5vmin;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-gap: 4em;
 }
 
 /**
