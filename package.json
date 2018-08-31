@@ -46,6 +46,7 @@
     "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
   },
   "scripts": {
+    "clear": "rm -rf .cache/ && rm -rf public/",
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -56,6 +57,7 @@
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "heroku-postbuild": "gatsby build",
-    "cleanup-repository": "rimraf bin contentful && npm uninstall contentful-import chalk inquirer rimraf "
+    "cleanup-repository": "rimraf bin contentful && npm uninstall contentful-import chalk inquirer rimraf ",
+    "release": "yarn clear && yarn deploy"
   }
 }
