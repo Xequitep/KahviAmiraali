@@ -1,8 +1,7 @@
 import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Hero from '../components/hero'
-import ArticlePreview from '../components/article-preview'
+import Page from '../layouts/Page'
 
 class RootIndex extends React.Component {
   render() {
@@ -10,17 +9,17 @@ class RootIndex extends React.Component {
     const page = get(this, 'props.data.contentfulPage')
 
     return (
-      <div style={{ background: '#fff' }}>
+      <Page>
         <Helmet title={siteTitle} />
-        <div className="wrapper">
-          <h2 className="section-headline">{page.siteTitle}</h2>
+        <div>
+          <h1>{page.siteTitle}</h1>
           <p
             dangerouslySetInnerHTML={{
               __html: page.body.childMarkdownRemark.html,
             }}
           />
         </div>
-      </div>
+      </Page>
     )
   }
 }

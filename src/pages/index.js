@@ -1,7 +1,8 @@
 import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import ArticlePreview from '../components/article-preview'
+import RecentArticles from '../components/RecentArticles'
+import Page from '../layouts/Page'
 
 class RootIndex extends React.Component {
   render() {
@@ -9,21 +10,11 @@ class RootIndex extends React.Component {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
 
     return (
-      <div style={{ background: '#fff' }}>
+      <Page>
         <Helmet title={siteTitle} />
-        <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <ArticlePreview article={node} />
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      </div>
+        <h1>Kahviamiraali</h1>
+        <RecentArticles posts={posts} />
+      </Page>
     )
   }
 }

@@ -1,18 +1,18 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Img from 'gatsby-image'
+import Img from './Img'
 import styled from 'styled-components'
 
 const Preview = styled.div`
-    grid-template-rows: min-content min-content min-content;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-gap: 1em;
+  grid-template-rows: min-content min-content min-content;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 1em;
 `
 
 const StyledImage = styled.div`
-    grid-column: 1;
-    grid-row: 1 / 4;
+  grid-column: 1;
+  grid-row: 1 / 4;
 `
 const StyledHeader = styled.h3`
   grid-column: 2;
@@ -20,16 +20,16 @@ const StyledHeader = styled.h3`
   margin: 0;
 `
 const StyledDate = styled.small`
-grid-column: 2;
-grid-row: 2;
+  grid-column: 2;
+  grid-row: 2;
 `
 const StyledDescription = styled.p`
-      grid-column: 2;
-    grid-row: 3;
-    margin:0;
-    p {
-      margin:0;
-    }
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+  p {
+    margin: 0;
+  }
 `
 
 export default ({ article }) => (
