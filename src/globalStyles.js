@@ -46,4 +46,7 @@ injectGlobal`
          color: ${theme.color.primary}
       }
   }
+  ul {
+      margin-left: ${theme.size.m};
+  }
 `

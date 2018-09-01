@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import Img from '../components/Img'
 import Page from '../layouts/Page'
+import { UiWrapper } from '../components/UI'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -13,8 +13,10 @@ class BlogPostTemplate extends React.Component {
       <Page heroImage={post.heroImage}>
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <div>
-          <h1>{post.title}</h1>
-          <small>{post.publishDate}</small>
+          <UiWrapper>
+            <h1>{post.title}</h1>
+            <small>{post.publishDate}</small>
+          </UiWrapper>
           <div
             dangerouslySetInnerHTML={{
               __html: post.body.childMarkdownRemark.html,

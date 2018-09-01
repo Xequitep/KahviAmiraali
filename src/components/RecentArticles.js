@@ -1,9 +1,8 @@
 import React from 'react'
 import ArticlePreview from './ArticlePreview'
-import styled from 'styled-components'
+import { List } from './UI'
 
-const ListArticles = styled.ul`
-  list-style: none;
+const ListArticles = List.extend`
   li {
     margin: ${props => props.theme.space.stack.m};
   }
@@ -11,7 +10,7 @@ const ListArticles = styled.ul`
 
 export default ({ posts }) => (
   <div>
-    <h2>Recent articles</h2>
+    <h2>Uusimmat artikkelit</h2>
     <ListArticles>
       {posts.map(({ node }) => {
         return (
