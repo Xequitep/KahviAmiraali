@@ -3,7 +3,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Page from '../layouts/Page'
 
-class RootIndex extends React.Component {
+class PageNode extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const page = get(this, 'props.data.contentfulPage')
@@ -24,18 +24,17 @@ class RootIndex extends React.Component {
   }
 }
 
-export default RootIndex
+export default PageNode
 
 export const pageQuery = graphql`
-  query pageQuery {
-    contentfulPage {
+  query pageQuery($slug: String!) {
+    contentfulPage(slug: { eq: $slug }) {
       title
       body {
         childMarkdownRemark {
           html
         }
       }
-      updatedAt
     }
   }
 `
