@@ -1,50 +1,29 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Grid from './Grid'
 import Img from './Img'
 import styled from 'styled-components'
+import { UiWrapper } from './UI'
 
-const Preview = styled.div`
-  grid-template-rows: min-content min-content min-content;
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-gap: 1em;
-`
-
-const StyledImage = styled.div`
+const StyledImg = styled(Img)`
   grid-column: 1;
-  grid-row: 1 / 4;
-`
-const StyledHeader = styled.h3`
-  grid-column: 2;
-  grid-row: 1;
-  margin: 0;
-`
-const StyledDate = styled.small`
-  grid-column: 2;
-  grid-row: 2;
-`
-const StyledDescription = styled.p`
-  grid-column: 2;
-  grid-row: 3;
-  margin: 0;
-  p {
-    margin: 0;
-  }
+  grid-row: 1 / 3;
 `
 
 export default ({ article }) => (
-  <Preview>
-    <StyledImage>
-      <Img alt="" sizes={article.heroImage.sizes} />
-    </StyledImage>
-    <StyledHeader>
-      <Link to={`/blog/${article.slug}`}>{article.title}</Link>
-    </StyledHeader>
-    <StyledDate>{article.publishDate}</StyledDate>
-    <StyledDescription
+  <Grid columns="3fr 5fr" rows="min-content 1fr" columnGap="1em">
+    <StyledImg alt="" sizes={article.heroImage.sizes} />
+    <UiWrapper>
+      <h3>
+        <Link to={`/blog/${article.slug}`}>{article.title}</Link>
+      </h3>
+      <small>{article.publishDate}</small>
+    </UiWrapper>
+
+    <div
       dangerouslySetInnerHTML={{
         __html: article.description.childMarkdownRemark.html,
       }}
     />
-  </Preview>
+  </Grid>
 )
