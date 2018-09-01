@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-export default () => (
-  <nav role="navigation">
+export default ({ className }) => (
+  <nav className={className} role="navigation">
     <ul>
       <li>
         <Link to="/">Etusivu</Link>

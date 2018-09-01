@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from '../components/Img'
+import Page from '../layouts/Page'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
-      <div>
+      <Page>
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <div>
           <Img alt={post.title} sizes={post.heroImage.sizes} />
@@ -23,7 +24,7 @@ class BlogPostTemplate extends React.Component {
             }}
           />
         </div>
-      </div>
+      </Page>
     )
   }
 }

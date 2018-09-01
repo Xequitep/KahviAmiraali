@@ -12,8 +12,8 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   margin-right: 1em;
 `
 
-export default () => (
-  <Footer>
+export default ({ className }) => (
+  <Footer className={className}>
     <a href="https://www.instagram.com/xequitep/">
       <StyledFontAwesomeIcon icon={['fab', 'instagram']} />
       <span>Instagram</span>
