@@ -31,6 +31,14 @@ injectGlobal`
       margin-top: ${theme.size.s}
       margin-bottom: ${theme.size.xs}
   }
+  p {
+      font-size: ${theme.size.m}
+      line-height: 1.250;
+      margin: ${theme.space.stack.m}
+  }
+  small {
+      font-size: ${theme.size.s}
+  }
   a {
       color: ${theme.color.primary_dark}
       text-decoration: none;
