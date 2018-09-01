@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
     return (
       <Page>
         <Helmet title={siteTitle} />
-        <h1>Blog</h1>
+        <h1>Blogi</h1>
         <RecentArticles posts={posts} />
       </Page>
     )
