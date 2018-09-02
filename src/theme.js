@@ -6,6 +6,8 @@ const pixels = {
   xl: '32px',
 }
 
+export const maxWidth = '64em'
+
 export default {
   color: {
     black: '#303030', //Blackish

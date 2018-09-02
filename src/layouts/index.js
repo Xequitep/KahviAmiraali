@@ -5,11 +5,15 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 import theme from '../theme'
-import STYLES from '../globalStyles'
+import styles from '../globalStyles'
 
 library.add(fab, faInstagram)
 
 class Template extends React.Component {
+  constructor(p) {
+    super(p)
+    styles()
+  }
   render() {
     const { location, children } = this.props
 

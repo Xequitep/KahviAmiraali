@@ -3,10 +3,11 @@ import styled, { css } from 'styled-components'
 import Navigation from './Navigation'
 import Footer from './Footer'
 import Img from '../components/Img'
+import { maxWidth } from '../theme'
 
 const Page = styled.div`
   display: grid;
-  grid-template-columns: [full-start] auto [content-start] 768px [content-end] auto [full-end];
+  grid-template-columns: [full-start] auto [content-start] ${maxWidth} [content-end] auto [full-end];
   grid-template-rows: auto auto auto;
   grid-gap: ${props => props.theme.space.m};
 `
