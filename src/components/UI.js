@@ -11,6 +11,7 @@ export const UiWrapper = styled.div`
   small {
     line-height: 1;
     margin: 0;
+    padding: 0;
   }
 `
 export const List = styled.ul`
