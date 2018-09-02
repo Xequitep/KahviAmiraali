@@ -18,6 +18,7 @@ export default () => injectGlobal`
   body {
       font-size: ${theme.size.m}
       font-family: 'Nunito Sans', sans-serif;
+      font-weight: 400;
       line-height: 1;
   }
   h1 {
