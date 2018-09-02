@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { media } from '../helpers/responsiveness'
 
 export default styled.div`
   display: grid;
@@ -7,7 +8,7 @@ export default styled.div`
   ${props => props.rowGap && `grid-row-gap: ${props.rowGap}`};
   ${props =>
     (props.columns || props.column) &&
-    css`
+    ((props.breakOn && media[props.breakOn]) || css)`
       grid-template-columns: ${props => {
         if (props.columns) {
           return props.columns
@@ -22,7 +23,7 @@ export default styled.div`
     `};
   ${props =>
     (props.rows || props.row) &&
-    css`
+    ((props.breakOn && media[props.breakOn]) || css)`
       grid-template-rows: ${props => {
         if (props.rows) {
           return props.rows

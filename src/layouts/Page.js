@@ -7,7 +7,9 @@ import { maxWidth } from '../theme'
 
 const Page = styled.div`
   display: grid;
-  grid-template-columns: [full-start] auto [content-start] ${maxWidth} [content-end] auto [full-end];
+  grid-template-columns:
+    [full-start] auto [content-start] minmax(auto, ${maxWidth})
+    [content-end] auto [full-end];
   grid-template-rows: auto auto auto;
   grid-gap: ${props => props.theme.space.m};
 `

@@ -42,7 +42,7 @@ export default () => injectGlobal`
     font-family: 'Halant', serif;
   }
   h1, h2 {
-    border-bottom: 1px solid ${theme.color.neutral75};
+    border-bottom: 2px solid ${theme.color.neutral75};
     margin-top: ${theme.size.m}
     margin-bottom: ${theme.size.s}
     padding-bottom: ${theme.size.xxs};

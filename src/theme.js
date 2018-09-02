@@ -8,6 +8,10 @@ const pixels = {
 
 export const maxWidth = '64em'
 
+export const breakpoints = {
+  desktop: maxWidth,
+}
+
 export default {
   color: {
     black: '#303030', //Blackish
