@@ -17,7 +17,6 @@ export default ({ className }) => (
   <nav className={className} role="navigation">
     <Navigation repeat column="minmax(min-content, 10vmax)">
       <StyledLink to="/">Etusivu</StyledLink>
-      <StyledLink to="/blog/">Blogi</StyledLink>
       <StyledLink to="/about/">Tietoa</StyledLink>
     </Navigation>
   </nav>

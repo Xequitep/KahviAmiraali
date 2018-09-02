@@ -31,5 +31,11 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Halant:600', 'Nunito+Sans:300,400,400i,700'],
+      },
+    },
   ],
 }

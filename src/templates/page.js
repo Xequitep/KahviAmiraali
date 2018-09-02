@@ -12,7 +12,7 @@ class PageNode extends React.Component {
       <Page>
         <Helmet title={siteTitle} />
         <div>
-          <h1>{page.siteTitle}</h1>
+          <h1>{page.title}</h1>
           <p
             dangerouslySetInnerHTML={{
               __html: page.body.childMarkdownRemark.html,

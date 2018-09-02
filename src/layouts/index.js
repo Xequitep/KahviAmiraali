@@ -5,14 +5,17 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 import theme from '../theme'
-import STYLES from '../globalStyles'
+import styles from '../globalStyles'
 
 library.add(fab, faInstagram)
 
 class Template extends React.Component {
+  constructor(p) {
+    super(p)
+    styles()
+  }
   render() {
     const { location, children } = this.props
-    let header
 
     let rootPath = `/`
     if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
