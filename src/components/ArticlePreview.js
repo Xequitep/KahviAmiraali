@@ -4,6 +4,7 @@ import Grid from './Grid'
 import Img from './Img'
 import styled from 'styled-components'
 import { UiWrapper } from './UI'
+import Header from './Header'
 
 const StyledImg = styled(Img)`
   grid-column: 1;
@@ -12,13 +13,17 @@ const StyledImg = styled(Img)`
 
 export default ({ article }) => (
   <Grid columns="3fr 5fr" rows="min-content 1fr" columnGap="1em">
-    <StyledImg alt="" sizes={article.heroImage.sizes} />
-    <UiWrapper>
-      <h3>
-        <Link to={`/blog/${article.slug}`}>{article.title}</Link>
-      </h3>
-      <small>{article.publishDate}</small>
-    </UiWrapper>
+    <StyledImg
+      alt={article.title}
+      corners="xs"
+      sizes={article.heroImage.sizes}
+    />
+    <Header
+      to={`/blog/${article.slug}`}
+      header={article.title}
+      small={article.publishDate}
+      heading="h3"
+    />
     <div
       dangerouslySetInnerHTML={{
         __html: article.description.childMarkdownRemark.html,

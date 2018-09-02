@@ -7,6 +7,7 @@ injectGlobal`
     margin: 0;
     box-sizing: border-box;
     outline: none;
+    color: ${theme.color.black};
   }
   body {
       font-size: ${theme.size.m}
@@ -30,6 +31,10 @@ injectGlobal`
   h1, h2, h3, h4 {
       margin-top: ${theme.size.s}
       margin-bottom: ${theme.size.xs}
+  }
+  h1, h2 {
+    border-bottom: 1px solid ${theme.color.neutral75};
+    padding-bottom: ${theme.size.xxs};
   }
   p {
       font-size: ${theme.size.m}
