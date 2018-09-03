@@ -10,6 +10,7 @@ export const maxWidth = '64em'
 
 export const breakpoints = {
   desktop: maxWidth,
+  tablet: '32em',
 }
 
 export default {

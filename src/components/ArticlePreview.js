@@ -4,22 +4,28 @@ import Img from './Img'
 import styled from 'styled-components'
 import Header from './Header'
 import { UiWrapper } from './UI'
+import { media } from '../helpers/responsiveness'
 
 const HoverWrapper = styled.div`
   align-self: center;
   margin: 0 1em;
-  opacity: 0;
   transition: opacity 0.4s, filter 0.6s;
   * {
     color: white !important;
   }
+  ${media.tablet`
+    opacity: 0;
+  `};
 `
 
 const StyledImg = styled(Img)`
-  object-fit: cover;
-  height: 100%;
   z-index: -1;
+  filter: blur(2px) brightness(0.7);
+  ${media.tablet`
   filter: none;
+    object-fit: cover;
+    height: 100%;
+  `};
 `
 const StyledGrid = Grid.extend`
   > * {
