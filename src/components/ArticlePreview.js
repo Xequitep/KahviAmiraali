@@ -6,53 +6,55 @@ import Header from './Header'
 import { UiWrapper } from './UI'
 import { media } from '../helpers/responsiveness'
 
-const StyledImg = styled(Img)`
-  grid-column: 1;
-  grid-row: 1 / 3;
-`
-const StyledHeader = styled(Header)`
-  grid-column: 1;
-  grid-row: 1 / 3;
-  align-self: end;
-  padding: ${props => props.theme.space.l};
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 1) 30%,
-    rgba(255, 255, 255, 0) 110%
-  );
-  ${media.desktop`
-    grid-column: auto;
-    grid-row: auto;
-    padding: 0;
-    background: none;
+const HoverWrapper = styled.div`
+  align-self: center;
+  margin: 1.5em;
+  transition: opacity 0.4s, filter 0.6s;
+  * {
+    color: white !important;
+  }
+  ${media.tablet`
+    opacity: 0;
   `};
 `
-const StyledDescription = styled(UiWrapper)``
+
+const StyledImg = styled(Img)`
+  z-index: -1;
+  filter: blur(2px) brightness(0.7);
+  ${media.tablet`
+  filter: none;
+    object-fit: cover;
+    height: 100%;
+  `};
+`
+const StyledGrid = Grid.extend`
+  > * {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  &:hover ${HoverWrapper} {
+    opacity: 1;
+  }
+  &:hover ${StyledImg} {
+    filter: blur(2px) brightness(0.7);
+  }
+`
 
 export default ({ className, article }) => (
-  <Grid
-    className={className}
-    columns="3fr 5fr"
-    rows="min-content 1fr"
-    columnGap="1em"
-    rowGap="1em"
-    breakOn="desktop"
-  >
-    <StyledImg
-      alt={article.title}
-      corners="xs"
-      sizes={article.heroImage.sizes}
-    />
-    <StyledHeader
-      to={`/blog/${article.slug}`}
-      header={article.title}
-      small={article.publishDate}
-      heading="h3"
-    />
-    <StyledDescription
-      dangerouslySetInnerHTML={{
-        __html: article.description.childMarkdownRemark.html,
-      }}
-    />
-  </Grid>
+  <StyledGrid className={className} columns="1fr" rows="1fr">
+    <StyledImg alt={article.title} sizes={article.heroImage.sizes} />
+    <HoverWrapper>
+      <Header
+        to={`/blog/${article.slug}`}
+        header={article.title}
+        small={article.publishDate}
+        heading="h3"
+      />
+      <UiWrapper
+        dangerouslySetInnerHTML={{
+          __html: article.description.childMarkdownRemark.html,
+        }}
+      />
+    </HoverWrapper>
+  </StyledGrid>
 )

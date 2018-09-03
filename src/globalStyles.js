@@ -11,10 +11,6 @@ export default () => injectGlobal`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
   }
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
   body {
       font-size: ${theme.size.m}
       font-family: 'Nunito Sans', sans-serif;

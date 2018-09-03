@@ -15,7 +15,7 @@ export default styled.div`
         } else if (props.repeat && props.column && props.children.length > 2) {
           return `repeat(${props.children.length}, ${props.column})`
         } else if (props.column) {
-          return React.Children.map(props.children, c => props.column)
+          return React.Children.map(props.children, c => `${props.column} `)
         } else {
           return React.Children.map(props.children, c => '1fr ')
         }
@@ -30,7 +30,7 @@ export default styled.div`
         } else if (props.repeat && props.row && props.children.length > 2) {
           return `repeat(${props.children.length}, ${props.row})`
         } else if (props.row) {
-          return React.Children.map(props.children, c => props.row)
+          return React.Children.map(props.children, c => `${props.row} `)
         } else {
           return React.Children.map(props.children, c => '1fr ')
         }
