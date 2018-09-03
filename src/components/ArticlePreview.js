@@ -8,7 +8,7 @@ import { media } from '../helpers/responsiveness'
 
 const HoverWrapper = styled.div`
   align-self: center;
-  margin: 0 1em;
+  margin: 1.5em;
   transition: opacity 0.4s, filter 0.6s;
   * {
     color: white !important;
@@ -42,11 +42,7 @@ const StyledGrid = Grid.extend`
 
 export default ({ className, article }) => (
   <StyledGrid className={className} columns="1fr" rows="1fr">
-    <StyledImg
-      alt={article.title}
-      corners="xs"
-      sizes={article.heroImage.sizes}
-    />
+    <StyledImg alt={article.title} sizes={article.heroImage.sizes} />
     <HoverWrapper>
       <Header
         to={`/blog/${article.slug}`}
