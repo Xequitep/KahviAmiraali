@@ -11,7 +11,7 @@ const StyledLogo = styled(Logo)`
 
 export default ({ className }) => (
   <Header className={className}>
-    <a href="https://www.instagram.com/xequitep/">
+    <a href="/">
       <StyledLogo />
     </a>
   </Header>
