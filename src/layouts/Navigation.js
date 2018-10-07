@@ -6,7 +6,7 @@ import Header from './Header'
 
 const StyledLink = styled(Link)``
 
-const Navigation = Grid.extend`
+const Navigation = Grid.withComponent('nav').extend`
   list-style: none;
   letter-spacing: 1px;
 
@@ -16,7 +16,8 @@ const Navigation = Grid.extend`
   }
 `
 export default ({ className }) => (
-  <Navigation repeat column="min-content">
+  <Navigation repeat column="max-content">
+    <StyledLink to="/contact/">Ota yhteyttä</StyledLink>
     <StyledLink to="/about/">Tietoa</StyledLink>
   </Navigation>
 )
