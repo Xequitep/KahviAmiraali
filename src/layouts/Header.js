@@ -51,6 +51,8 @@ const HeaderWrapper = styled.div`
 `
 
 const ToggleButton = styled.button`
+  border: none;
+  background: none;
   font-size: 1.25em;
     ${props =>
       props.visibleOnMobile &&
