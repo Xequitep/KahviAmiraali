@@ -1,17 +1,23 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Form from '../components/Form'
 import Page from '../layouts/Page'
+import Form from '../components/Form'
+import Header from '../components/Header'
 
-class BlogIndex extends React.Component {
+class Contact extends React.Component {
   render() {
     return (
       <Page>
         <Helmet title="Contact" />
+        <h1>Ota yhteyttä</h1>
+        <p>
+          Mikäli sinulla on kysyttävää tai haluat jättää palautetta, voit
+          käyttää tätä lomaketta. Käsittelen kaiken saamani palautteen.
+        </p>
         <Form />
       </Page>
     )
   }
 }
 
-export default BlogIndex
+export default Contact
