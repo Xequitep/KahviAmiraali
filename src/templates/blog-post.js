@@ -6,11 +6,15 @@ import TalkyardCommentsIframe from '@debiki/gatsby-plugin-talkyard'
 import Page from '../layouts/Page'
 import Header from '../components/Header'
 import Img from '../components/Img'
+import { media } from '../helpers/responsiveness'
 
 const HeroImage = styled(Img)`
-  float: left;
-  width: 25% !important;
-  margin: 0 1em 0.5em 0;
+  margin-bottom: 1em;
+  ${media.tablet`
+    float: left;
+    width: 25% !important;
+    margin: 0 1em 0.5em 0;
+  `};
 `
 
 const BlogHeader = styled(Header)`
