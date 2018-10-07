@@ -26,7 +26,7 @@ const Form = styled.form`
 `
 
 export default ({ data }) => (
-  <Form name="contact" method="POST" data-netlify="true" action="/thanks">
+  <Form name="contact" method="POST" data-netlify="true" action="/thanks/">
     <label>
       Nimi: <sup>*</sup> <input type="text" name="name" required />
     </label>
