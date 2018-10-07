@@ -9,7 +9,7 @@ import Img from '../components/Img'
 
 const HeroImage = styled(Img)`
   float: left;
-  width: 25%;
+  width: 25% !important;
   margin: 0 1em 0.5em 0;
 `
 
