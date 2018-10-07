@@ -2,22 +2,21 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import Grid from '../components/Grid'
+import Header from './Header'
 
 const StyledLink = styled(Link)``
 
 const Navigation = Grid.extend`
   list-style: none;
   letter-spacing: 1px;
+
   ${StyledLink} {
     text-align: center;
-    padding: ${props => props.theme.space.m};
+    padding: ${props => props.theme.space.squish.m};
   }
 `
 export default ({ className }) => (
-  <nav className={className} role="navigation">
-    <Navigation repeat column="minmax(min-content, 10vmax)">
-      <StyledLink to="/">Etusivu</StyledLink>
-      <StyledLink to="/about/">Tietoa</StyledLink>
-    </Navigation>
-  </nav>
+  <Navigation repeat column="min-content">
+    <StyledLink to="/about/">Tietoa</StyledLink>
+  </Navigation>
 )

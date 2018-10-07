@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import Navigation from './Navigation'
 import Logo from '../assets/logo.svg'
 
-const Header = styled.div`
+const Header = styled.a`
   font-family: 'Yeseva One', cursive;
-  font-size: 2em;
+  font-size: 1.3em;
+
   display: flex;
   align-items: center;
 `
@@ -16,10 +18,11 @@ const StyledLogo = styled(Logo)`
 `
 
 export default ({ className }) => (
-  <Header className={className}>
-    <a href="/">
+  <div className={className}>
+    <Header href="/">
       <StyledLogo />
-    </a>
-    <span>Kahviamiraali</span>
-  </Header>
+      <span>Kahviamiraali</span>
+    </Header>
+    <Navigation />
+  </div>
 )

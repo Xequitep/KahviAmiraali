@@ -10,9 +10,12 @@ export default () => injectGlobal`
     color: ${theme.color.black};
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
   }
   body {
       font-size: ${theme.size.m};
+      background-color: ${theme.color.background};
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 400;
       line-height: 1;
