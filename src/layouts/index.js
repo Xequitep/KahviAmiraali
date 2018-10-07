@@ -1,13 +1,9 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 import theme from '../theme'
 import styles from '../globalStyles'
-
-library.add(fab, faInstagram)
+import icons from '../helpers/icons'
 
 class Template extends React.Component {
   constructor(p) {

@@ -18,10 +18,6 @@ const StyledHeader = styled(Header)`
   grid-row: 1;
   justify-self: end;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   width: 100%;
   max-width: ${maxWidth};
 `

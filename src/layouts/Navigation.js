@@ -1,23 +1,29 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import Grid from '../components/Grid'
 import Header from './Header'
+import StopScrolling from '../helpers/StopScrolling'
 
-const StyledLink = styled(Link)``
+const StyledLink = styled(Link)`
+  padding: ${props => props.theme.space.squish.m};
+`
 
-const Navigation = Grid.withComponent('nav').extend`
+const Navigation = styled.nav`
   list-style: none;
   letter-spacing: 1px;
+  display: flex;
 
-  ${StyledLink} {
+  flex-direction: inherit;
+
+  flex-d ${StyledLink} {
     text-align: center;
     padding: ${props => props.theme.space.squish.m};
   }
 `
-export default ({ className }) => (
-  <Navigation repeat column="max-content">
+export default ({ className, visibleOnMobile }) => (
+  <Navigation>
     <StyledLink to="/contact/">Ota yhteyttä</StyledLink>
     <StyledLink to="/about/">Tietoa</StyledLink>
+    {visibleOnMobile && <StopScrolling />}
   </Navigation>
 )
