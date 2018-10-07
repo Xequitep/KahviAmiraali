@@ -91,6 +91,12 @@
     follow-redirects "^1.2.5"
     is-buffer "^1.1.5"
 
+"@debiki/gatsby-plugin-talkyard@^0.5.7":
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/@debiki/gatsby-plugin-talkyard/-/gatsby-plugin-talkyard-0.5.7.tgz#910f670ba42a4c6aa45175e75130e0cd027c015d"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 "@fortawesome/fontawesome-common-types@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.4.tgz#7c560ff732c6c7c7c179ae25227ce5449e6f6d65"
