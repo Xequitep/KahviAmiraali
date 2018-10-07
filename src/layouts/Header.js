@@ -4,8 +4,9 @@ import Logo from '../assets/logo.svg'
 
 const Header = styled.div``
 const StyledLogo = styled(Logo)`
-  max-height: 3em;
-  max-width: 3em;
+  height: 20vw;
+  max-height: 6em;
+  max-width: 6em;
   margin: 0.5em;
 `
 
