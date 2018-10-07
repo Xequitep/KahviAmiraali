@@ -37,5 +37,14 @@ module.exports = {
         fonts: ['Halant:600', 'Nunito+Sans:300,400,400i,700'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-127113891-1',
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
   ],
 }
