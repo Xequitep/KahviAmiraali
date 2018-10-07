@@ -14,11 +14,15 @@ export default () => injectGlobal`
     padding: 0;
   }
   body {
-      font-size: ${theme.size.m};
-      background-color: ${theme.color.background};
-      font-family: 'Nunito Sans', sans-serif;
-      font-weight: 400;
-      line-height: 1;
+    font-size: ${theme.size.m};
+    background-color: ${theme.color.background};
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+          
+    &.stop-scrolling {
+      overflow: hidden;
+    }
   }
   h1, h2, h3, h4 {
     font-family: 'Halant', serif;

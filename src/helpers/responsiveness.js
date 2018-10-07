@@ -1,4 +1,7 @@
+import React from 'react'
 import { css } from 'styled-components'
+import Responsive from 'react-responsive'
+
 import { breakpoints } from '../theme'
 
 export const media = Object.entries(breakpoints).reduce(
@@ -12,3 +15,5 @@ export const media = Object.entries(breakpoints).reduce(
   },
   {}
 )
+
+export const Tablet = props => <Responsive {...props} minWidth={512} />
