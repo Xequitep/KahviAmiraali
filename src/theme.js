@@ -20,7 +20,8 @@ export default {
     neutral55: '#8c8c8c',
     neutral75: '#bfbfbf',
     neutral90: '#e6e6e6',
-    white: '#ffffff', //White
+    white: 'white', //White
+    background: '#ffffff',
     primary: '#71685e', //Brown
     primary_dark: '#4e4a4a', //Dark brown
     secondary: '#c5e0e0', //Light blue
@@ -48,6 +49,16 @@ export default {
       m: `${pixels.m} 0`,
       l: `${pixels.l} 0`,
       xl: `${pixels.xl} 0`,
+    },
+    squish: {
+      s: `${pixels.m} ${pixels.s}`,
+      m: `${pixels.l} ${pixels.m}`,
+      l: `${pixels.xl} ${pixels.l}`,
+    },
+    stretch: {
+      s: `${pixels.s} ${pixels.m}`,
+      m: `${pixels.m} ${pixels.l}`,
+      l: `${pixels.l} ${pixels.xl}`,
     },
     inline: {
       xs: `0 ${pixels.xs}`,

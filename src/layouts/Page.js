@@ -1,9 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import Navigation from './Navigation'
 import Footer from './Footer'
 import Header from './Header'
-import Img from '../components/Img'
 import { maxWidth } from '../theme'
 
 const Page = styled.div`
@@ -15,16 +13,17 @@ const Page = styled.div`
   grid-gap: ${props => props.theme.space.m};
 `
 
-const StyledNav = styled(Navigation)`
+const StyledHeader = styled(Header)`
   grid-column: content;
   grid-row: 1;
   justify-self: end;
 
-  ${props =>
-    props.hasHero &&
-    css`
-      color: white;
-    `};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: ${maxWidth};
 `
 const Main = styled.main`
   grid-row: 2;
@@ -35,26 +34,10 @@ const StyledFooter = styled(Footer)`
   grid-row: 3;
   grid-column: content;
 `
-const StyledHeader = styled(Header)`
-  grid-column: content;
-  grid-row: 1;
-  justify-self: start;
-`
 
-const HeaderImg = styled(Img)`
-  grid-column: full;
-  grid-row: 1;
-
-  z-index: -1;
-  object-fit: cover;
-  height: 65vh;
-  filter: opacity(0.3) blur(2px);
-`
 export default ({ children, heroImage }) => (
   <Page>
-    {heroImage && <HeaderImg alt={heroImage.alt} sizes={heroImage.sizes} />}
     <StyledHeader />
-    <StyledNav hasHero={!!heroImage} />
     <Main>{children}</Main>
     <StyledFooter />
   </Page>
