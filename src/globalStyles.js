@@ -13,9 +13,13 @@ export default () => injectGlobal`
   }
   body {
       font-size: ${theme.size.m};
-      font-family: 'Yeseva One', cursive;
+      font-family: 'Nunito Sans', sans-serif;
       font-weight: 400;
       line-height: 1;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Halant', serif;
+    font-weight: 600;
   }
   h1 {
       font-size: ${theme.size.xl};

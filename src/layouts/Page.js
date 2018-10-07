@@ -52,7 +52,8 @@ const HeaderImg = styled(Img)`
 `
 export default ({ children, heroImage }) => (
   <Page>
-    {heroImage && <HeaderImg alt={heroImage.alt} sizes={heroImage.sizes} />}
+    {heroImage &&
+      false && <HeaderImg alt={heroImage.alt} sizes={heroImage.sizes} />}
     <StyledHeader />
     <StyledNav hasHero={!!heroImage} />
     <Main>{children}</Main>
