@@ -27,6 +27,8 @@ const Form = styled.form`
 
 export default ({ data }) => (
   <Form name="contact" method="POST" data-netlify="true" action="/thanks/">
+    {/* You still need to add the hidden input with the form name to your JSX form */}
+    <input type="hidden" name="form-name" value="contact" />
     <label>
       Nimi: <sup>*</sup> <input type="text" name="name" required />
     </label>
