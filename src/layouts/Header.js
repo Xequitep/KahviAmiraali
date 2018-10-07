@@ -5,11 +5,12 @@ import Logo from '../assets/logo.svg'
 import { Tablet, media } from '../helpers/responsiveness'
 import StopScrolling from '../helpers/StopScrolling'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const Header = styled.a`
   font-family: 'Yeseva One', cursive;
-  ${media.tablet`
-    font-size: 1.3em;
-  `} display: flex;
+  font-size: 1.3em;
+  display: flex;
   align-items: center;
 `
 const StyledLogo = styled(Logo)`
@@ -29,6 +30,7 @@ const HeaderWrapper = styled.div`
     css`
       position: fixed;
       background-color: white;
+      padding: 0 1em;
 
       top: 0;
       left: 0;
@@ -48,36 +50,60 @@ const HeaderWrapper = styled.div`
     `};
 `
 
+const ToggleButton = styled.button`
+  font-size: 1.25em;
+    ${props =>
+      props.visibleOnMobile &&
+      css`
+        position: absolute;
+        position: absolute;
+        right: 1.25em;
+        top: 1.25em;
+      `}
+}
+`
+
 class HeaderComp extends PureComponent {
   state = {
     visibleOnMobile: false,
   }
 
-  dasdasd = () => {
+  toggleMobileNav = () => {
     this.setState(state => ({ visibleOnMobile: !state.visibleOnMobile }))
   }
+
   render() {
     const { className } = this.props
     const { visibleOnMobile } = this.state
     return (
-      <HeaderWrapper className={className} visibleOnMobile={visibleOnMobile}>
-        <Header href="/">
-          <button>Takas</button>
-          <StyledLogo />
-          <span>Kahviamiraali</span>
-        </Header>
-        <Tablet className={className}>
-          {matches => {
-            if (matches || visibleOnMobile)
-              return <Navigation visibleOnMobile={visibleOnMobile} />
-            return (
-              <button onClick={this.dasdasd}>
-                {visibleOnMobile ? 'close' : 'open'}
-              </button>
-            )
-          }}
-        </Tablet>
-      </HeaderWrapper>
+      <Tablet className={className}>
+        {matches => (
+          <HeaderWrapper
+            className={className}
+            visibleOnMobile={visibleOnMobile}
+          >
+            <Header href="/">
+              <StyledLogo />
+              <span>Kahviamiraali</span>
+            </Header>
+            {(matches || visibleOnMobile) && (
+              <Navigation visibleOnMobile={visibleOnMobile} />
+            )}
+            {!matches && (
+              <ToggleButton
+                visibleOnMobile={visibleOnMobile}
+                onClick={this.toggleMobileNav}
+              >
+                {visibleOnMobile ? (
+                  <FontAwesomeIcon icon="times" />
+                ) : (
+                  <FontAwesomeIcon icon="bars" />
+                )}
+              </ToggleButton>
+            )}
+          </HeaderWrapper>
+        )}
+      </Tablet>
     )
   }
 }
