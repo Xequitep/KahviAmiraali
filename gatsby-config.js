@@ -46,5 +46,11 @@ module.exports = {
         respectDNT: true,
       },
     },
+    {
+      resolve: `@debiki/gatsby-plugin-talkyard`,
+      options: {
+        talkyardServerUrl: 'https://kahvia.talkyard.net',
+      },
+    },
   ],
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Navigation from './Navigation'
 import Footer from './Footer'
+import Header from './Header'
 import Img from '../components/Img'
 import { maxWidth } from '../theme'
 
@@ -18,6 +19,7 @@ const StyledNav = styled(Navigation)`
   grid-column: content;
   grid-row: 1;
   justify-self: end;
+
   ${props =>
     props.hasHero &&
     css`
@@ -33,6 +35,11 @@ const StyledFooter = styled(Footer)`
   grid-row: 3;
   grid-column: content;
 `
+const StyledHeader = styled(Header)`
+  grid-column: content;
+  grid-row: 1;
+  justify-self: start;
+`
 
 const HeaderImg = styled(Img)`
   grid-column: full;
@@ -46,6 +53,7 @@ const HeaderImg = styled(Img)`
 export default ({ children, heroImage }) => (
   <Page>
     {heroImage && <HeaderImg alt={heroImage.alt} sizes={heroImage.sizes} />}
+    <StyledHeader />
     <StyledNav hasHero={!!heroImage} />
     <Main>{children}</Main>
     <StyledFooter />
