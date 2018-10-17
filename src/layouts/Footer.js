@@ -14,7 +14,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 
 export default ({ className }) => (
   <Footer className={className}>
-    <a href="https://www.instagram.com/xequitep/">
+    <a href="https://www.instagram.com/kahviamiraali/">
       <StyledFontAwesomeIcon icon={['fab', 'instagram']} />
       <span>Instagram</span>
     </a>
