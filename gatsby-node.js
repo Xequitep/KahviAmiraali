@@ -7,6 +7,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.js')
     const page = path.resolve('./src/templates/page.js')
+    const gridPage = path.resolve('./src/templates/grid-page.js')
     resolve(
       graphql(
         `
@@ -27,6 +28,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 }
               }
             }
+            allContentfulGridPage {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
           }
         `
       ).then(result => {
@@ -37,6 +45,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         const posts = result.data.allContentfulBlogPost.edges
         const pages = result.data.allContentfulPage.edges
+        const gridPages = result.data.allContentfulGridPage.edges
         pages.forEach(({ node }, index) => {
           createPage({
             path: `/${node.slug}/`,
@@ -46,15 +55,24 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             },
           })
         })
-        posts.forEach(({ node }, index) => {
+        gridPages.forEach(({ node }, index) => {
           createPage({
-            path: `/blog/${node.slug}/`,
-            component: blogPost,
+            path: `/${node.slug}/`,
+            component: gridPage,
             context: {
               slug: node.slug,
             },
           })
-        })
+        }) *
+          posts.forEach(({ node }, index) => {
+            createPage({
+              path: `/blog/${node.slug}/`,
+              component: blogPost,
+              context: {
+                slug: node.slug,
+              },
+            })
+          })
       })
     )
   })

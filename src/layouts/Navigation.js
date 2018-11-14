@@ -15,13 +15,13 @@ const Navigation = styled.nav`
 
   flex-direction: inherit;
 
-  flex-d ${StyledLink} {
-    text-align: center;
+  ${StyledLink} {
     padding: ${props => props.theme.space.squish.m};
   }
 `
 export default ({ className, visibleOnMobile }) => (
   <Navigation>
+    <StyledLink to="/palvelut/">Palvelut</StyledLink>
     <StyledLink to="/contact/">Ota yhteyttä</StyledLink>
     <StyledLink to="/about/">Tietoa</StyledLink>
     {visibleOnMobile && <StopScrolling />}

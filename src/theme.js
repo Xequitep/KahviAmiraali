@@ -10,6 +10,7 @@ export const maxWidth = '64em'
 
 export const breakpoints = {
   desktop: maxWidth,
+  laptop: '48em',
   tablet: '32em',
 }
 
@@ -23,6 +24,8 @@ export default {
     white: 'white', //White
     background: '#ffffff',
     primary: '#71685e', //Brown
+    link: '#0645AD',
+    link_dark: '#0B0080',
     primary_dark: '#4e4a4a', //Dark brown
     secondary: '#c5e0e0', //Light blue
     success: '#b0cfb3', // Green

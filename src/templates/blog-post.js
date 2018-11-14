@@ -21,6 +21,17 @@ const BlogHeader = styled(Header)`
   display: flow-root;
 `
 
+const Content = styled.div`
+  a {
+    color: ${props => props.theme.color.link};
+    text-decoration: underline;
+    &:active,
+    &:hover {
+      color: ${props => props.theme.color.link_dark};
+    }
+  }
+`
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
@@ -36,7 +47,7 @@ class BlogPostTemplate extends React.Component {
             small={post.publishDate}
             heading="h1"
           />
-          <div
+          <Content
             dangerouslySetInnerHTML={{
               __html: post.body.childMarkdownRemark.html,
             }}

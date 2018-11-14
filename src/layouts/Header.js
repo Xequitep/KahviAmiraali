@@ -65,6 +65,17 @@ const ToggleButton = styled.button`
 }
 `
 
+const LogoTitle = styled.span`
+  display: unset;
+  ${media.tablet`
+      display:none;
+
+    `};
+  ${media.laptop`
+      display:unset;
+    `};
+`
+
 class HeaderComp extends PureComponent {
   state = {
     visibleOnMobile: false,
@@ -86,7 +97,7 @@ class HeaderComp extends PureComponent {
           >
             <Header href="/">
               <StyledLogo />
-              <span>Kahviamiraali</span>
+              <LogoTitle>Kahviamiraali</LogoTitle>
             </Header>
             {(matches || visibleOnMobile) && (
               <Navigation visibleOnMobile={visibleOnMobile} />
