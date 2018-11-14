@@ -21,7 +21,7 @@ const Navigation = styled.nav`
 `
 export default ({ className, visibleOnMobile }) => (
   <Navigation>
-    <StyledLink to="/palvelut/">Palvelut</StyledLink>
+    <StyledLink to="/services/">Palvelut</StyledLink>
     <StyledLink to="/contact/">Ota yhteyttä</StyledLink>
     <StyledLink to="/about/">Tietoa</StyledLink>
     {visibleOnMobile && <StopScrolling />}
